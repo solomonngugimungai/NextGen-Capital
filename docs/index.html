@@ -311,12 +311,12 @@
   <!-- Main Content Tabs -->
   <section class="main-content">
     <div class="main-tabs">
-      <a href="#main-projects" class="main-tab-button active" onclick="switchMainTab(event, 'main-projects')">Projects</a>
-      <a href="#main-speakers" class="main-tab-button" onclick="switchMainTab(event, 'main-speakers')">Speakers</a>
-      <a href="#main-ambassador" class="main-tab-button" onclick="switchMainTab(event, 'main-ambassador')">Ambassador</a>
-      <a href="#main-student-signup" class="main-tab-button" onclick="switchMainTab(event, 'main-student-signup')">Student Sign-Up</a>
-      <a href="#main-about" class="main-tab-button" onclick="switchMainTab(event, 'main-about')">About</a>
-      <a href="#main-founders" class="main-tab-button" onclick="switchMainTab(event, 'main-founders')">Founders</a>
+      <button class="main-tab-button active" onclick="switchMainTab(event, 'main-projects')">Projects</button>
+      <button class="main-tab-button" onclick="switchMainTab(event, 'main-speakers')">Speakers</button>
+      <button class="main-tab-button" onclick="switchMainTab(event, 'main-ambassador')">Ambassador</button>
+      <button class="main-tab-button" onclick="switchMainTab(event, 'main-student-signup')">Student Sign-Up</button>
+      <button class="main-tab-button" onclick="switchMainTab(event, 'main-about')">About</button>
+      <button class="main-tab-button" onclick="switchMainTab(event, 'main-founders')">Founders</button>
     </div>
 
     <div class="main-tab-content">
@@ -325,9 +325,9 @@
         <h2>Student-Led Projects</h2>
 
         <div class="tabs">
-          <a href="#tab-labs" class="tab-button active" onclick="switchTab(event, 'tab-labs')">Economic Challenge Labs</a>
-          <a href="#tab-camps" class="tab-button" onclick="switchTab(event, 'tab-camps')">Pitch & Build Camps</a>
-          <a href="#tab-workshops" class="tab-button" onclick="switchTab(event, 'tab-workshops')">Community Finance</a>
+          <button class="tab-button active" onclick="switchTab(event, 'tab-labs')">Economic Challenge Labs</button>
+          <button class="tab-button" onclick="switchTab(event, 'tab-camps')">Pitch & Build Camps</button>
+          <button class="tab-button" onclick="switchTab(event, 'tab-workshops')">Community Finance</button>
         </div>
 
         <div class="tab-content">
@@ -444,10 +444,11 @@
       tabbuttons = document.getElementsByClassName("tab-button");
       for (i = 0; i < tabbuttons.length; i++) {
         tabbuttons[i].classList.remove("active");
-        var href = tabbuttons[i].getAttribute('href') || '';
-        if (href === ('#' + tabName)) {
-          tabbuttons[i].classList.add('active');
-        }
+      }
+      // Find the button that corresponds to this tab
+      var targetButton = document.querySelector('.tab-button[onclick*="switchTab(event, \'' + tabName + '\')"]');
+      if (targetButton) {
+        targetButton.classList.add('active');
       }
       var el = document.getElementById(tabName);
       if (el) el.classList.add("active");
@@ -492,10 +493,11 @@
       tabbuttons = document.getElementsByClassName("main-tab-button");
       for (i = 0; i < tabbuttons.length; i++) {
         tabbuttons[i].classList.remove("active");
-        var href = tabbuttons[i].getAttribute('href') || '';
-        if (href === ('#' + tabName)) {
-          tabbuttons[i].classList.add('active');
-        }
+      }
+      // Find the button that corresponds to this tab
+      var targetButton = document.querySelector('.main-tab-button[onclick*="switchMainTab(event, \'' + tabName + '\')"]');
+      if (targetButton) {
+        targetButton.classList.add('active');
       }
       var el = document.getElementById(tabName);
       if (el) el.classList.add("active");

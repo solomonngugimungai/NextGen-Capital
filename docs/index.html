@@ -41,15 +41,11 @@
 
     .tab-pane {
       display: none;
-      animation: fadeIn 0.5s ease;
-      opacity: 0;
-      transform: translateY(10px);
+      animation: fadeIn 0.3s ease;
     }
 
     .tab-pane.active {
       display: block;
-      opacity: 1;
-      transform: translateY(0);
     }
 
     .tab-pane ul {
@@ -63,8 +59,8 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
   </style>
 </head>
@@ -80,7 +76,6 @@
       <li><a href="#student-signup">Student Sign-Up</a></li>
       <li><a href="#founders">Founder</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="donate.html">Donate</a></li>
     </ul>
   </nav>
 

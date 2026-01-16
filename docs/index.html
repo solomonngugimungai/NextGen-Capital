@@ -1,264 +1,234 @@
 <!DOCTYPE html>
 <html>
 <head>
- <meta charset="UTF-8" />
- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
- <title>NxtGen Capital</title>
- <link rel="stylesheet" href="styles.css"/>
- <style>
-   .tabs {
-     display: flex;
-     gap: 10px;
-     margin: 20px 0;
-     border-bottom: 2px solid #ddd;
-     flex-wrap: wrap;
-   }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NxtGen Capital</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin: 20px 0;
+      border-bottom: 2px solid #ddd;
+      flex-wrap: wrap;
+    }
 
+    .tab-button {
+      padding: 12px 20px;
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 500;
+      color: #666;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
 
-   .tab-button {
-     padding: 12px 20px;
-     border: none;
-     background-color: transparent;
-     cursor: pointer;
-     font-size: 16px;
-     font-weight: 500;
-     color: #666;
-     border-bottom: 3px solid transparent;
-     transition: all 0.3s ease;
-   }
+    .tab-button:hover {
+      color: #0066cc;
+    }
 
+    .tab-button.active {
+      color: #0066cc;
+      border-bottom-color: #0066cc;
+    }
 
-   .tab-button:hover {
-     color: #0066cc;
-   }
+    .tab-content {
+      padding: 20px 0;
+    }
 
+    .tab-pane {
+      display: none;
+      animation: fadeIn 0.5s ease;
+      opacity: 0;
+      transform: translateY(10px);
+    }
 
-   .tab-button.active {
-     color: #0066cc;
-     border-bottom-color: #0066cc;
-   }
+    .tab-pane.active {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
 
+    .tab-pane ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
 
-   .tab-content {
-     padding: 20px 0;
-   }
+    .tab-pane li {
+      margin: 8px 0;
+      line-height: 1.6;
+    }
 
-
-   .tab-pane {
-     display: none;
-     animation: fadeIn 0.5s ease;
-     opacity: 0;
-     transform: translateY(10px);
-   }
-
-
-   .tab-pane.active {
-     display: block;
-     opacity: 1;
-     transform: translateY(0);
-   }
-
-
-   .tab-pane ul {
-     margin-top: 15px;
-     padding-left: 20px;
-   }
-
-
-   .tab-pane li {
-     margin: 8px 0;
-     line-height: 1.6;
-   }
-
-
-   @keyframes fadeIn {
-     from { opacity: 0; transform: translateY(10px); }
-     to { opacity: 1; transform: translateY(0); }
-   }
- </style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
 
+  <nav class="navbar">
+    <a href="#" class="logo" style="text-decoration: none; color: inherit;">NxtGen Capital</a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#speakers">Speakers</a></li>
+      <li><a href="#ambassador">Ambassador</a></li>
+      <li><a href="#student-signup">Student Sign-Up</a></li>
+      <li><a href="#founders">Founder</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </nav>
 
+  <header class="hero">
+    <h1>Empowering the Next Generation of Economic Thinkers</h1>
+    <p>Free, project-based business & economics programs for students in the Bay Area and beyond.</p>
+    <a href="#about" class="btn">Learn More</a>
+  </header>
 
- <nav class="navbar">
-   <a href="#" class="logo" style="text-decoration: none; color: inherit;">NxtGen Capital</a>
-   <ul class="nav-links">
-     <li><a href="#projects">Projects</a></li>
-     <li><a href="#speakers">Speakers</a></li>
-     <li><a href="#ambassador">Ambassador</a></li>
-     <li><a href="#student-signup">Student Sign-Up</a></li>
-     <li><a href="#founders">Founder</a></li>
-     <li><a href="#about">About</a></li>
-     <li><a href="donate.html">Donate</a></li>
-   </ul>
- </nav>
+  <section class="menlo-banner">
+    In partnership with <strong>Menlo School Business Club</strong> — Building future leaders through real projects and mentorship.
+  </section>
 
+  <section id="projects" class="section">
+    <h2>Student-Led Projects</h2>
+    
+    <div class="tabs">
+      <a href="#tab-labs" class="tab-button active" onclick="switchTab(event, 'tab-labs')">Economic Challenge Labs</a>
+      <a href="#tab-camps" class="tab-button" onclick="switchTab(event, 'tab-camps')">Pitch & Build Camps</a>
+      <a href="#tab-workshops" class="tab-button" onclick="switchTab(event, 'tab-workshops')">Community Finance</a>
+    </div>
 
- <header class="hero">
-   <h1>Empowering the Next Generation of Economic Thinkers</h1>
-   <p>Free, project-based business & economics programs for students in the Bay Area and beyond.</p>
-   <a href="#about" class="btn">Learn More</a>
- </header>
+    <div class="tab-content">
+      <div id="tab-labs" class="tab-pane active">
+        <h3>Economic Challenge Labs</h3>
+        <p>Teams solve real market and policy problems using data, iteration, and collaboration. Students work on challenges like analyzing market trends, evaluating policy impacts, and developing solutions to economic issues.</p>
+        <ul>
+          <li>Real-world data analysis</li>
+          <li>Collaborative problem-solving</li>
+          <li>Mentorship from industry experts</li>
+        </ul>
+      </div>
+      <div id="tab-camps" class="tab-pane">
+        <h3>Pitch & Build Camps</h3>
+        <p>Students design business ideas, prototype solutions, and pitch to peers and mentors. A intensive program where ideas become reality through hands-on building and feedback.</p>
+        <ul>
+          <li>Business model development</li>
+          <li>Rapid prototyping</li>
+          <li>Live pitch presentations</li>
+        </ul>
+      </div>
+      <div id="tab-workshops" class="tab-pane">
+        <h3>Community Finance Workshops</h3>
+        <p>Project-based workshops delivered to youth organizations at zero cost. We bring financial literacy and economics education directly to underserved communities.</p>
+        <ul>
+          <li>Personal finance fundamentals</li>
+          <li>Investing & wealth building</li>
+          <li>Economic literacy for all</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
+  <section id="speakers" class="section">
+    <h2>Industry Speakers</h2>
+    <p>We host guest speakers across investing, economics, entrepreneurship, and markets.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdIIhRTasVZ1YvvIDjXv0UhYuzjcJ6WNHo2keahIcFEPsHlA/viewform" target="_blank" class="btn-outline">Request to Speak</a>
+  </section>
 
- <section class="menlo-banner">
-   In partnership with <strong>Menlo School Business Club</strong> — Building future leaders through real projects and mentorship.
- </section>
+  <section id="ambassador" class="section">
+    <h2>Become an Ambassador</h2>
+    <p>Join our ambassador program to help spread the word about NxtGen Capital and connect with fellow students passionate about economics and entrepreneurship.</p>
+    <p>As an ambassador, you'll gain leadership experience, network with industry professionals, and contribute to expanding our reach in the community.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRmMbDrxNtiwnaZOAoeiqESJrAXR4RQgunymryhUsMcAF6gA/viewform?usp=publish-editor" class="btn">Request to be an Ambassador</a>
+  </section>
 
+  <section id="student-signup" class="section">
+    <h2>Join as a Student</h2>
+    <p>Ready to dive into hands-on economics and business projects? Sign up to participate in our free programs and start building your skills with real-world challenges.</p>
+    <p>Whether you're interested in data analysis, business development, or community workshops, we have opportunities for students at all levels.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSci7XgnSjovh2Blmyev8lfagH4kKbffyqLlJYFJxe6xBQA0rg/viewform?usp=publish-editor" class="btn-outline">Sign Up as a Student</a>
+  </section>
 
- <section id="projects" class="section">
-   <h2>Student-Led Projects</h2>
-  
-   <div class="tabs">
-     <a href="#tab-labs" class="tab-button active" onclick="switchTab(event, 'tab-labs')">Economic Challenge Labs</a>
-     <a href="#tab-camps" class="tab-button" onclick="switchTab(event, 'tab-camps')">Pitch & Build Camps</a>
-     <a href="#tab-workshops" class="tab-button" onclick="switchTab(event, 'tab-workshops')">Community Finance</a>
-   </div>
+  <section id="about" class="section">
+    <h2>Our Mission</h2>
+    <p>
+      We believe financial and economic education should be built, tested, and experienced — not just memorized.
+      Our programs are <strong>project-driven, collaborative, and 100% free</strong> to ensure access for all students.
+    </p>
+  </section>
 
+  <section id="founders" class="section">
+    <h2>Meet the Founders</h2>
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h3>Solomon Mungai</h3>
+      <p>
+        Solomon is passionate about solving complex problems and finding patterns that lead to new insights. Fascinated by biotechnology and genetics, he explores genealogy to understand how science connects people to their history and future.
+      </p>
+      <p>
+        During his freshman year, Solomon taught himself to day trade crypto and achieved a remarkable 2,667% return in just two months. This experience sharpened his ability to learn quickly, adapt, and manage risk. He now trades stocks year-round and approaches crypto strategically during the summers.
+      </p>
+      <p>
+        His curiosity about money and systems led him to study economics, where he's learning how economies function on a larger scale. Solomon is excited to combine his interests in science, finance, and strategy to explore opportunities that create real-world impact.
+      </p>
+      <p><a href="https://www.linkedin.com/in/solomon-ngugi-mungai-a6ba85383/" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Connect on LinkedIn →</a></p>
 
-   <div class="tab-content">
-     <div id="tab-labs" class="tab-pane active">
-       <h3>Economic Challenge Labs</h3>
-       <p>Teams solve real market and policy problems using data, iteration, and collaboration. Students work on challenges like analyzing market trends, evaluating policy impacts, and developing solutions to economic issues.</p>
-       <ul>
-         <li>Real-world data analysis</li>
-         <li>Collaborative problem-solving</li>
-         <li>Mentorship from industry experts</li>
-       </ul>
-     </div>
-     <div id="tab-camps" class="tab-pane">
-       <h3>Pitch & Build Camps</h3>
-       <p>Students design business ideas, prototype solutions, and pitch to peers and mentors. A intensive program where ideas become reality through hands-on building and feedback.</p>
-       <ul>
-         <li>Business model development</li>
-         <li>Rapid prototyping</li>
-         <li>Live pitch presentations</li>
-       </ul>
-     </div>
-     <div id="tab-workshops" class="tab-pane">
-       <h3>Community Finance Workshops</h3>
-       <p>Project-based workshops delivered to youth organizations at zero cost. We bring financial literacy and economics education directly to underserved communities.</p>
-       <ul>
-         <li>Personal finance fundamentals</li>
-         <li>Investing & wealth building</li>
-         <li>Economic literacy for all</li>
-       </ul>
-     </div>
-   </div>
- </section>
+      <h3 style="margin-top: 30px;">Jalen Wong</h3>
+      <p>
+        Jalen brings a strong foundation in finance and computer science to NxtGen Capital. He completed the prestigious Wharton Financial Summer course, gaining advanced knowledge in financial theory and markets.
+      </p>
+      <p>
+        Beyond his Wharton experience, Jalen has completed specialized courses in investing, equipping him with practical skills for portfolio management and investment analysis. His proficiency in computer science adds a technical dimension to the team, enabling him to build scalable solutions and leverage technology in financial education.
+      </p>
+      <p><a href="https://www.linkedin.com/in/jalen-wong-278a98370/" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Connect on LinkedIn →</a></p>
+    </div>
+  </section>
 
+  <footer class="footer">
+    <p>© 2025 NxtGen Capital — Built for students, by students.</p>
+    <p>Free programs • Real projects • Industry mentorship</p>
+  </footer>
 
- <section id="speakers" class="section">
-   <h2>Industry Speakers</h2>
-   <p>We host guest speakers across investing, economics, entrepreneurship, and markets.</p>
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdIIhRTasVZ1YvvIDjXv0UhYuzjcJ6WNHo2keahIcFEPsHlA/viewform" target="_blank" class="btn-outline">Request to Speak</a>
- </section>
+  <script>
+    function activateTabByName(tabName) {
+      var i, tabcontent, tabbuttons;
+      tabcontent = document.getElementsByClassName("tab-pane");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].classList.remove("active");
+      }
+      tabbuttons = document.getElementsByClassName("tab-button");
+      for (i = 0; i < tabbuttons.length; i++) {
+        tabbuttons[i].classList.remove("active");
+        var href = tabbuttons[i].getAttribute('href') || '';
+        if (href === ('#' + tabName)) {
+          tabbuttons[i].classList.add('active');
+        }
+      }
+      var el = document.getElementById(tabName);
+      if (el) el.classList.add("active");
+    }
 
+    function switchTab(evt, tabName) {
+      if (evt && evt.preventDefault) evt.preventDefault();
+      activateTabByName(tabName);
+      history.replaceState(null, '', '#' + tabName);
+    }
 
- <section id="ambassador" class="section">
-   <h2>Become an Ambassador</h2>
-   <p>Join our ambassador program to help spread the word about NxtGen Capital and connect with fellow students passionate about economics and entrepreneurship.</p>
-   <p>As an ambassador, you'll gain leadership experience, network with industry professionals, and contribute to expanding our reach in the community.</p>
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRmMbDrxNtiwnaZOAoeiqESJrAXR4RQgunymryhUsMcAF6gA/viewform?usp=publish-editor" class="btn">Request to be an Ambassador</a>
- </section>
+    window.addEventListener('hashchange', function() {
+      var name = location.hash ? location.hash.substring(1) : 'tab-labs';
+      activateTabByName(name);
+    });
 
-
- <section id="student-signup" class="section">
-   <h2>Join as a Student</h2>
-   <p>Ready to dive into hands-on economics and business projects? Sign up to participate in our free programs and start building your skills with real-world challenges.</p>
-   <p>Whether you're interested in data analysis, business development, or community workshops, we have opportunities for students at all levels.</p>
-   <a href="https://docs.google.com/forms/d/e/1FAIpQLSci7XgnSjovh2Blmyev8lfagH4kKbffyqLlJYFJxe6xBQA0rg/viewform?usp=publish-editor" class="btn-outline">Sign Up as a Student</a>
- </section>
-
-
- <section id="about" class="section">
-   <h2>Our Mission</h2>
-   <p>
-     We believe financial and economic education should be built, tested, and experienced — not just memorized.
-     Our programs are <strong>project-driven, collaborative, and 100% free</strong> to ensure access for all students.
-   </p>
- </section>
-
-
- <section id="founders" class="section">
-   <h2>Meet the Founders</h2>
-   <div style="max-width: 800px; margin: 0 auto;">
-     <h3>Solomon Mungai</h3>
-     <p>
-       Solomon is passionate about solving complex problems and finding patterns that lead to new insights. Fascinated by biotechnology and genetics, he explores genealogy to understand how science connects people to their history and future.
-     </p>
-     <p>
-       During his freshman year, Solomon taught himself to day trade crypto and achieved a remarkable 2,667% return in just two months. This experience sharpened his ability to learn quickly, adapt, and manage risk. He now trades stocks year-round and approaches crypto strategically during the summers.
-     </p>
-     <p>
-       His curiosity about money and systems led him to study economics, where he's learning how economies function on a larger scale. Solomon is excited to combine his interests in science, finance, and strategy to explore opportunities that create real-world impact.
-     </p>
-     <p><a href="https://www.linkedin.com/in/solomon-ngugi-mungai-a6ba85383/" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Connect on LinkedIn →</a></p>
-
-
-     <h3 style="margin-top: 30px;">Jalen Wong</h3>
-     <p>
-       Jalen brings a strong foundation in finance and computer science to NxtGen Capital. He completed the prestigious Wharton Financial Summer course, gaining advanced knowledge in financial theory and markets.
-     </p>
-     <p>
-       Beyond his Wharton experience, Jalen has completed specialized courses in investing, equipping him with practical skills for portfolio management and investment analysis. His proficiency in computer science adds a technical dimension to the team, enabling him to build scalable solutions and leverage technology in financial education.
-     </p>
-     <p><a href="https://www.linkedin.com/in/jalen-wong-278a98370/" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Connect on LinkedIn →</a></p>
-   </div>
- </section>
-
-
- <footer class="footer">
-   <p>© 2025 NxtGen Capital — Built for students, by students.</p>
-   <p>Free programs • Real projects • Industry mentorship</p>
- </footer>
-
-
- <script>
-   function activateTabByName(tabName) {
-     var i, tabcontent, tabbuttons;
-     tabcontent = document.getElementsByClassName("tab-pane");
-     for (i = 0; i < tabcontent.length; i++) {
-       tabcontent[i].classList.remove("active");
-     }
-     tabbuttons = document.getElementsByClassName("tab-button");
-     for (i = 0; i < tabbuttons.length; i++) {
-       tabbuttons[i].classList.remove("active");
-       var href = tabbuttons[i].getAttribute('href') || '';
-       if (href === ('#' + tabName)) {
-         tabbuttons[i].classList.add('active');
-       }
-     }
-     var el = document.getElementById(tabName);
-     if (el) el.classList.add("active");
-   }
-
-
-   function switchTab(evt, tabName) {
-     if (evt && evt.preventDefault) evt.preventDefault();
-     activateTabByName(tabName);
-     history.replaceState(null, '', '#' + tabName);
-   }
-
-
-   window.addEventListener('hashchange', function() {
-     var name = location.hash ? location.hash.substring(1) : 'tab-labs';
-     activateTabByName(name);
-   });
-
-
-   // Initialize correct tab on load
-   document.addEventListener('DOMContentLoaded', function() {
-     var name = location.hash ? location.hash.substring(1) : 'tab-labs';
-     activateTabByName(name);
-   });
- </script>
-
+    // Initialize correct tab on load
+    document.addEventListener('DOMContentLoaded', function() {
+      var name = location.hash ? location.hash.substring(1) : 'tab-labs';
+      activateTabByName(name);
+    });
+  </script>
 
 </body>
 </html>
-
-
-

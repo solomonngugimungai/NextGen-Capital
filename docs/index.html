@@ -93,9 +93,9 @@
     <h2>Student-Led Projects</h2>
     
     <div class="tabs">
-      <button class="tab-button active" onclick="switchTab(event, 'tab-labs')">Economic Challenge Labs</button>
-      <button class="tab-button" onclick="switchTab(event, 'tab-camps')">Pitch & Build Camps</button>
-      <button class="tab-button" onclick="switchTab(event, 'tab-workshops')">Community Finance</button>
+      <a href="#tab-labs" class="tab-button active" onclick="switchTab(event, 'tab-labs')">Economic Challenge Labs</a>
+      <a href="#tab-camps" class="tab-button" onclick="switchTab(event, 'tab-camps')">Pitch & Build Camps</a>
+      <a href="#tab-workshops" class="tab-button" onclick="switchTab(event, 'tab-workshops')">Community Finance</a>
     </div>
 
     <div class="tab-content">
@@ -189,22 +189,40 @@
   </footer>
 
   <script>
-    function switchTab(evt, tabName) {
+    function activateTabByName(tabName) {
       var i, tabcontent, tabbuttons;
-      
       tabcontent = document.getElementsByClassName("tab-pane");
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].classList.remove("active");
       }
-      
       tabbuttons = document.getElementsByClassName("tab-button");
       for (i = 0; i < tabbuttons.length; i++) {
         tabbuttons[i].classList.remove("active");
+        var href = tabbuttons[i].getAttribute('href') || '';
+        if (href === ('#' + tabName)) {
+          tabbuttons[i].classList.add('active');
+        }
       }
-      
-      document.getElementById(tabName).classList.add("active");
-      evt.currentTarget.classList.add("active");
+      var el = document.getElementById(tabName);
+      if (el) el.classList.add("active");
     }
+
+    function switchTab(evt, tabName) {
+      if (evt && evt.preventDefault) evt.preventDefault();
+      activateTabByName(tabName);
+      history.replaceState(null, '', '#' + tabName);
+    }
+
+    window.addEventListener('hashchange', function() {
+      var name = location.hash ? location.hash.substring(1) : 'tab-labs';
+      activateTabByName(name);
+    });
+
+    // Initialize correct tab on load
+    document.addEventListener('DOMContentLoaded', function() {
+      var name = location.hash ? location.hash.substring(1) : 'tab-labs';
+      activateTabByName(name);
+    });
   </script>
 
 </body>

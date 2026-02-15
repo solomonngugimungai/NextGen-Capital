@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Founders - NxtGen Capital</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .founders-hero {
+      background: linear-gradient(135deg, #1f1a3a 0%, #1a1a3e 50%, #1a1a2e 100%);
+      padding: 120px 20px;
+      text-align: center;
+      animation: slideInDown 0.8s ease;
+      border-bottom: 3px solid #a855f7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .founders-hero h1 {
+      background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 48px;
+      margin-bottom: 16px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .founders-hero p {
+      color: #d1d5db;
+      font-size: 18px;
+      margin: 0;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .founder-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 20px;
+      background: linear-gradient(180deg, #1f1a3a 0%, #1a1230 100%);
+      border-top: 4px solid #a855f7;
+    }
+
+    .founder-section:nth-child(odd) {
+      background: linear-gradient(180deg, #1a1630 0%, #0f1329 100%);
+    }
+
+    .founder-content {
+      max-width: 700px;
+      animation: slideUp 0.8s ease;
+    }
+
+    .founder-section h2 {
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 50%, #6366f1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 42px;
+      margin-bottom: 24px;
+      margin-top: 0;
+      animation: slideInLeft 0.6s ease;
+    }
+
+    .founder-section p {
+      color: #d1d5db;
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .founder-section p:nth-of-type(2) {
+      animation-delay: 0.3s;
+    }
+
+    .founder-section p:nth-of-type(3) {
+      animation-delay: 0.4s;
+    }
+
+    .founder-link {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+      animation: fadeInUp 0.8s ease 0.5s both;
+    }
+
+    .founder-link:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 25px rgba(168, 85, 247, 0.6);
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll-triggered animations */
+    .founder-section.scroll-visible .founder-content {
+      animation: slideUp 0.8s ease forwards;
+    }
+
+    .founder-section.scroll-visible h2 {
+      animation: slideInLeft 0.6s ease forwards;
+    }
+
+    .founder-section.scroll-visible p {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    @media (max-width: 768px) {
+      .founders-hero h1 {
+        font-size: 32px;
+      }
+
+      .founder-section h2 {
+        font-size: 28px;
+      }
+
+      .founder-section {
+        min-height: auto;
+        padding: 80px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">NxtGen Capital</a>
+    <ul class="nav-links">
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#speakers">Speakers</a></li>
+      <li><a href="index.html#ambassador">Ambassador</a></li>
+      <li><a href="index.html#student-signup">Student Sign-Up</a></li>
+      <li><a href="founders.html">Founder</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="founders-hero">
+    <h1>Meet the Founders</h1>
+    <p>Visionary leaders shaping the future of economic education</p>
+  </section>
+
+  <section class="founder-section">
+    <div class="founder-content">
+      <h2>Solomon Mungai</h2>
+      <p>
+        Solomon is passionate about solving complex problems and finding patterns that lead to new insights. Fascinated by biotechnology and genetics, he explores genealogy to understand how science connects people to their history and future.
+      </p>
+      <p>
+        During his freshman year, Solomon taught himself to day trade crypto and achieved a remarkable 2,667% return in just two months. This experience sharpened his ability to learn quickly, adapt, and manage risk. He now trades stocks year-round and approaches crypto strategically during the summers.
+      </p>
+      <p>
+        His curiosity about money and systems led him to study economics, where he's learning how economies function on a larger scale. Solomon is excited to combine his interests in science, finance, and strategy to explore opportunities that create real-world impact.
+      </p>
+      <a href="https://www.linkedin.com/in/solomon-ngugi-mungai-a6ba85383/" target="_blank" class="founder-link">Connect on LinkedIn →</a>
+    </div>
+  </section>
+
+  <section class="founder-section">
+    <div class="founder-content">
+      <h2>Jalen Wong</h2>
+      <p>
+        Jalen brings a strong foundation in finance and computer science to NxtGen Capital. He completed the prestigious Wharton Financial Summer course, gaining advanced knowledge in financial theory and markets.
+      </p>
+      <p>
+        Beyond his Wharton experience, Jalen has completed specialized courses in investing, equipping him with practical skills for portfolio management and investment analysis. His proficiency in computer science adds a technical dimension to the team, enabling him to build scalable solutions and leverage technology in financial education.
+      </p>
+      <p>
+        With a unique blend of business acumen and technical expertise, Jalen is dedicated to revolutionizing how students learn about economics and finance through innovative, accessible platforms.
+      </p>
+      <a href="https://www.linkedin.com/in/jalen-wong-278a98370/" target="_blank" class="founder-link">Connect on LinkedIn →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 NxtGen Capital — Built for students, by students.</p>
+    <p>Free programs • Real projects • Industry mentorship</p>
+  </footer>
+
+  <script>
+    // Intersection Observer for scroll animations on sections
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all founder sections
+    document.querySelectorAll('.founder-section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Smooth scroll to sections
+    document.querySelectorAll('a[href^="index.html#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href').split('#')[1]);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

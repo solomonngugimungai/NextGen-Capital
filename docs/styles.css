@@ -179,6 +179,32 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: slideInLeft 0.6s ease;
+  position: relative;
+  padding-bottom: 16px;
+  display: inline-block;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.section h2:hover {
+  transform: scale(1.05) rotateZ(1deg);
+  filter: brightness(1.1);
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
+  border-radius: 2px;
+  transition: width 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.section.scroll-visible h2::after {
+  width: 100%;
 }
 
 .section-subtitle {
@@ -210,7 +236,74 @@ body {
   }
 }
 
-/* Programs Grid Layout */
+/* Section-specific animations */
+#projects {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f6ff 100%);
+  border-top: 4px solid #6366f1;
+}
+
+#speakers {
+  background: linear-gradient(180deg, #fce7f3 0%, #fff0f6 100%);
+  border-top: 4px solid #ec4899;
+}
+
+#ambassador {
+  background: linear-gradient(180deg, #fef3c7 0%, #fffbeb 100%);
+  border-top: 4px solid #f59e0b;
+}
+
+#student-signup {
+  background: linear-gradient(180deg, #dbeafe 0%, #f0f9ff 100%);
+  border-top: 4px solid #0284c7;
+}
+
+#about {
+  background: linear-gradient(180deg, #f0fdf4 0%, #f7fee7 100%);
+  border-top: 4px solid #22c55e;
+}
+
+#founders {
+  background: linear-gradient(180deg, #fdf2f8 0%, #faf5ff 100%);
+  border-top: 4px solid #a855f7;
+}
+
+.get-started-section {
+  background: linear-gradient(135deg, #e0e7ff 0%, #f0ebff 100%);
+  border-top: 4px solid #6366f1;
+}
+
+/* Scroll-triggered section animations */
+.section.scroll-visible {
+  animation: fadeInSection 0.6s ease forwards;
+}
+
+.section.scroll-visible h2 {
+  animation: slideInWithRotate 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.section.scroll-visible .section-subtitle {
+  animation: fadeInUp 0.8s ease 0.2s both;
+}
+
+@keyframes slideInWithRotate {
+  from {
+    opacity: 0;
+    transform: translateX(-40px) rotateZ(-2deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) rotateZ(0deg);
+  }
+}
+
+@keyframes expandWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
 .programs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

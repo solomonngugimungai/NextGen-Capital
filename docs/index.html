@@ -173,6 +173,43 @@
         }
       });
     });
+
+    // Intersection Observer for scroll animations on sections
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('scroll-visible');
+          // Don't unobserve - keep the class once added
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('.section').forEach(section => {
+      observer.observe(section);
+    });
+
+    // Stagger animation for program cards on scroll
+    const programCardsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll('.program-card');
+          cards.forEach((card, cardIndex) => {
+            card.style.animationDelay = `${cardIndex * 0.15}s`;
+          });
+        }
+      });
+    }, observerOptions);
+
+    const programsGrid = document.querySelector('.programs-grid');
+    if (programsGrid) {
+      programCardsObserver.observe(programsGrid);
+    }
   </script>
 
 </body>

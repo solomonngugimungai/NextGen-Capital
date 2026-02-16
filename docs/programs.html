@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Programs - NxtGen Capital</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .programs-hero {
+      background: linear-gradient(135deg, #1a1630 0%, #2d1b4d 50%, #3d2565 100%);
+      padding: 120px 20px;
+      text-align: center;
+      animation: slideInDown 0.8s ease;
+      border-bottom: 3px solid #6366f1;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .programs-hero h1 {
+      background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 48px;
+      margin-bottom: 16px;
+      animation: fadeInUp 0.8s ease 0.2s both;
+    }
+
+    .programs-hero p {
+      color: #d1d5db;
+      font-size: 18px;
+      margin: 0;
+      animation: fadeInUp 0.8s ease 0.4s both;
+    }
+
+    .programs-container {
+      min-height: auto;
+      padding: 120px 20px;
+      background: linear-gradient(180deg, #1a1630 0%, #0f1329 100%);
+      border-top: 4px solid #6366f1;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      margin-top: 40px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+    }
+
+    .program-card {
+      padding: 40px 24px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(99, 102, 241, 0.12);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: slideUp 0.6s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .program-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, currentColor 0%, transparent 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .program-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 16px 40px rgba(99, 102, 241, 0.25);
+    }
+
+    .program-card:hover::before {
+      opacity: 1;
+    }
+
+    .program-card-labs {
+      background: linear-gradient(135deg, #1e1a3e 0%, #1a1530 100%);
+      border-color: #6366f1;
+    }
+
+    .program-card-camps {
+      background: linear-gradient(135deg, #1f1a3a 0%, #1a1230 100%);
+      border-color: #ec4899;
+    }
+
+    .program-card-workshops {
+      background: linear-gradient(135deg, #1e1a2e 0%, #1a1520 100%);
+      border-color: #f59e0b;
+    }
+
+    .program-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+      display: block;
+      animation: bounce 0.6s ease 0.3s both;
+    }
+
+    .program-card h3 {
+      font-size: 24px;
+      margin-bottom: 16px;
+      margin-top: 0;
+      color: #e5e7eb;
+      font-weight: 700;
+    }
+
+    .program-card-labs h3 {
+      color: #a5b4fc;
+    }
+
+    .program-card-camps h3 {
+      color: #f472b6;
+    }
+
+    .program-card-workshops h3 {
+      color: #fbbf24;
+    }
+
+    .program-card p {
+      color: #d1d5db;
+      line-height: 1.6;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+
+    .program-features {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0;
+    }
+
+    .program-features li {
+      padding: 8px 0;
+      color: #d1d5db;
+      font-size: 15px;
+      animation: fadeInListItem 0.5s ease backwards;
+    }
+
+    .program-features li:nth-child(1) { animation-delay: 0.1s; }
+    .program-features li:nth-child(2) { animation-delay: 0.2s; }
+    .program-features li:nth-child(3) { animation-delay: 0.3s; }
+
+    .program-btn {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      border: 2px solid;
+    }
+
+    .program-card-labs .program-btn {
+      background: #6366f1;
+      color: white;
+      border-color: #6366f1;
+    }
+
+    .program-card-labs .program-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    .program-card-camps .program-btn {
+      background: #ec4899;
+      color: white;
+      border-color: #ec4899;
+    }
+
+    .program-card-camps .program-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+    }
+
+    .program-card-workshops .program-btn {
+      background: #f59e0b;
+      color: white;
+      border-color: #f59e0b;
+    }
+
+    .program-card-workshops .program-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+    }
+
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      from {
+        opacity: 0;
+        transform: scale(0.5) translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes fadeInListItem {
+      from {
+        opacity: 0;
+        transform: translateX(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .programs-hero h1 {
+        font-size: 32px;
+      }
+
+      .programs-container {
+        padding: 80px 20px;
+      }
+
+      .programs-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <a href="index.html" class="logo">NxtGen Capital</a>
+    <ul class="nav-links">
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="ambassador.html">Ambassador</a></li>
+      <li><a href="student-signup.html">Student Sign-Up</a></li>
+      <li><a href="founders.html">Founder</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </nav>
+
+  <section class="programs-hero">
+    <h1>Our Programs</h1>
+    <p>Three ways to dive into project-based economics and business learning</p>
+  </section>
+
+  <section class="programs-container">
+    <div class="programs-grid">
+      <div class="program-card program-card-labs">
+        <div class="program-icon">📊</div>
+        <h3>Economic Challenge Labs</h3>
+        <p>Teams solve real market and policy problems using data, iteration, and collaboration. Students work on challenges like analyzing market trends, evaluating policy impacts, and developing solutions to economic issues.</p>
+        <ul class="program-features">
+          <li>✓ Real-world data analysis</li>
+          <li>✓ Collaborative problem-solving</li>
+          <li>✓ Mentorship from industry experts</li>
+        </ul>
+        <a href="student-signup.html" class="program-btn">Join Now</a>
+      </div>
+
+      <div class="program-card program-card-camps">
+        <div class="program-icon">🚀</div>
+        <h3>Pitch & Build Camps</h3>
+        <p>Students design business ideas, prototype solutions, and pitch to peers and mentors. An intensive program where ideas become reality through hands-on building and feedback.</p>
+        <ul class="program-features">
+          <li>✓ Business model development</li>
+          <li>✓ Rapid prototyping</li>
+          <li>✓ Live pitch presentations</li>
+        </ul>
+        <a href="student-signup.html" class="program-btn">Join Now</a>
+      </div>
+
+      <div class="program-card program-card-workshops">
+        <div class="program-icon">👥</div>
+        <h3>Community Finance Workshops</h3>
+        <p>Project-based workshops delivered to youth organizations at zero cost. We bring financial literacy and economics education directly to underserved communities.</p>
+        <ul class="program-features">
+          <li>✓ Personal finance fundamentals</li>
+          <li>✓ Investing & wealth building</li>
+          <li>✓ Economic literacy for all</li>
+        </ul>
+        <a href="student-signup.html" class="program-btn">Join Now</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 NxtGen Capital — Built for students, by students.</p>
+    <p>Free programs • Real projects • Industry mentorship</p>
+  </footer>
+</body>
+</html>

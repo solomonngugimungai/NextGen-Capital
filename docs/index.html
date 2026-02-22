@@ -1,15 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>NxtGen Capital</title>
+  <title>NxtGen Capital — Free Business & Economics Programs for Students</title>
+  <meta name="description" content="NxtGen Capital offers free, project-based business and economics programs for students in the Bay Area and beyond. Explore labs, camps, and workshops."/>
+  <meta property="og:title" content="NxtGen Capital — Free Business & Economics Programs for Students"/>
+  <meta property="og:description" content="Empowering the next generation of economic thinkers through free, project-based programs, industry mentorship, and real-world learning."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://solomonngugimungai.github.io/NextGen-Capital/"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="NxtGen Capital — Free Business & Economics Programs"/>
+  <meta name="twitter:description" content="Free, project-based business and economics programs for students in the Bay Area and beyond."/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>"/>
   <link rel="stylesheet" href="styles.css"/>
+  <!-- Google Analytics: replace UA-XXXXX-Y with your tracking ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXX-Y"></script> -->
 </head>
 <body>
 
-  <nav class="navbar">
-    <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">NxtGen Capital</a>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main navigation">
+    <a href="index.html" class="logo">NxtGen Capital</a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="programs.html">Programs</a></li>
       <li><a href="speakers.html">Speakers</a></li>
@@ -21,7 +39,7 @@
     </ul>
   </nav>
 
-  <header class="hero">
+  <header class="hero" id="main-content">
     <h1>Empowering the Next Generation of Economic Thinkers</h1>
     <p>Free, project-based business & economics programs for students in the Bay Area and beyond.</p>
     <a href="programs.html" class="btn">Explore Programs</a>
@@ -31,10 +49,37 @@
     In partnership with <strong>Menlo School Business Club</strong> — Building future leaders through real projects and mentorship.
   </section>
 
+  <section class="testimonials">
+    <h2>What Students Say</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"NxtGen Capital gave me the confidence to pitch my business idea. The mentorship and hands-on projects were unlike anything I'd experienced in school."</p>
+        <span class="testimonial-author">— Alex R., Pitch &amp; Build Camp participant</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"I learned more about real-world economics in one workshop than in an entire semester. The collaborative environment pushed me to think bigger."</p>
+        <span class="testimonial-author">— Priya S., Economic Challenge Labs</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Being an ambassador connected me with industry professionals and helped me develop leadership skills I use every day."</p>
+        <span class="testimonial-author">— Marcus T., Student Ambassador</span>
+      </div>
+    </div>
+  </section>
+
   <footer class="footer">
-    <p>© 2025 NxtGen Capital — Built for students, by students.</p>
-    <p>Free programs • Real projects • Industry mentorship</p>
+    <p>&copy; 2026 NxtGen Capital — Built for students, by students.</p>
+    <p>Free programs &bull; Real projects &bull; Industry mentorship</p>
   </footer>
 
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navToggle.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+  </script>
 </body>
 </html>

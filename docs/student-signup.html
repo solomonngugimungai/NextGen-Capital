@@ -1,181 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join as a Student - NxtGen Capital</title>
+  <meta name="description" content="Sign up to participate in NxtGen Capital's free programs. Hands-on economics and business projects for students at all levels."/>
+  <meta property="og:title" content="Join as a Student - NxtGen Capital"/>
+  <meta property="og:description" content="Sign up for free, project-based economics and business programs. Data analysis, business development, and community workshops."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://solomonngugimungai.github.io/NextGen-Capital/student-signup.html"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Join as a Student - NxtGen Capital"/>
+  <meta name="twitter:description" content="Sign up for free, project-based economics and business programs for students."/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>"/>
   <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .signup-section {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 120px 20px;
-      background: linear-gradient(180deg, #1a1e3a 0%, #0f1729 100%);
-      border-top: 4px solid #0284c7;
-      text-align: center;
-    }
-
-    .signup-content {
-      max-width: 700px;
-      animation: slideUp 0.8s ease;
-    }
-
-    .signup-section h1 {
-      background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 42px;
-      margin-bottom: 24px;
-      margin-top: 0;
-      animation: slideInLeft 0.6s ease;
-    }
-
-    .signup-section p {
-      color: #d1d5db;
-      font-size: 16px;
-      line-height: 1.8;
-      margin-bottom: 20px;
-      animation: fadeInUp 0.8s ease 0.2s both;
-    }
-
-    .signup-section p:nth-of-type(2) {
-      animation-delay: 0.3s;
-    }
-
-    .steps-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
-      margin: 40px 0;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-      animation: fadeInUp 0.8s ease 0.4s both;
-    }
-
-    .step-card {
-      background: linear-gradient(135deg, #1a1630 0%, #0f1329 100%);
-      padding: 32px 24px;
-      border-radius: 12px;
-      text-align: center;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
-      transition: all 0.3s ease;
-      position: relative;
-      border: 2px solid rgba(99, 102, 241, 0.1);
-      animation: slideUp 0.6s ease;
-    }
-
-    .step-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 24px rgba(99, 102, 241, 0.2);
-      border-color: #6366f1;
-    }
-
-    .step-number {
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      font-weight: 700;
-      margin: 0 auto 16px;
-      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
-    }
-
-    .step-card h3 {
-      color: #e5e7eb;
-      font-size: 18px;
-      margin: 16px 0;
-      font-weight: 700;
-    }
-
-    .step-card p {
-      color: #d1d5db;
-      font-size: 14px;
-      line-height: 1.6;
-      margin: 0;
-      animation: none;
-    }
-
-    .cta-button {
-      display: inline-block;
-      margin-top: 24px;
-      padding: 12px 28px;
-      background: linear-gradient(135deg, #0284c7 0%, #06b6d4 100%);
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
-      animation: fadeInUp 0.8s ease 0.5s both;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(2, 132, 199, 0.6);
-    }
-
-    @keyframes slideUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes slideInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 768px) {
-      .signup-section h1 {
-        font-size: 32px;
-      }
-
-      .signup-section {
-        padding: 80px 20px;
-      }
-
-      .steps-container {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-    }
-  </style>
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main navigation">
     <a href="index.html" class="logo">NxtGen Capital</a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
       <li><a href="programs.html">Programs</a></li>
       <li><a href="speakers.html">Speakers</a></li>
@@ -187,7 +36,7 @@
     </ul>
   </nav>
 
-  <section class="signup-section">
+  <section class="signup-section" id="main-content">
     <div class="signup-content">
       <h1>Join as a Student</h1>
       <p>Ready to dive into hands-on economics and business projects? Sign up to participate in our free programs and start building your skills with real-world challenges.</p>
@@ -219,13 +68,23 @@
         </div>
       </div>
 
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSci7XgnSjovh2Blmyev8lfagH4kKbffyqLlJYFJxe6xBQA0rg/viewform?usp=publish-editor" target="_blank" class="cta-button">Sign Up Now</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSci7XgnSjovh2Blmyev8lfagH4kKbffyqLlJYFJxe6xBQA0rg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="cta-button">Sign Up Now</a>
     </div>
   </section>
 
   <footer class="footer">
-    <p>© 2025 NxtGen Capital — Built for students, by students.</p>
-    <p>Free programs • Real projects • Industry mentorship</p>
+    <p>&copy; 2026 NxtGen Capital — Built for students, by students.</p>
+    <p>Free programs &bull; Real projects &bull; Industry mentorship</p>
   </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navToggle.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+  </script>
 </body>
 </html>

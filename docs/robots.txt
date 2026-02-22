@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://solomonngugimungai.github.io/NextGen-Capital/sitemap.xml

@@ -1,162 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Donate - NxtGen Capital</title>
+  <meta name="description" content="Support NxtGen Capital with a donation. Help provide free, project-based economics and business education to students in the Bay Area."/>
+  <meta property="og:title" content="Donate - NxtGen Capital"/>
+  <meta property="og:description" content="Your donation helps provide free economics and business education to students in the Bay Area and beyond."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://solomonngugimungai.github.io/NextGen-Capital/donate.html"/>
+  <meta name="twitter:card" content="summary"/>
+  <meta name="twitter:title" content="Donate - NxtGen Capital"/>
+  <meta name="twitter:description" content="Support free, project-based economics education for students."/>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📈</text></svg>"/>
   <link rel="stylesheet" href="styles.css"/>
-  <style>
-    .donate-hero {
-      background: linear-gradient(135deg, #1f1a3a 0%, #1a1a3e 50%, #1a1a2e 100%);
-      padding: 60px 20px;
-      text-align: center;
-      animation: slideInDown 0.8s ease;
-      border-bottom: 3px solid #ec4899;
-    }
-
-    .donate-hero h1 {
-      background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #f59e0b 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      font-size: 36px;
-      margin-bottom: 16px;
-      animation: fadeInUp 0.8s ease 0.2s both;
-    }
-
-    .donate-container {
-      max-width: 600px;
-      margin: 40px auto;
-      padding: 40px;
-      background: linear-gradient(135deg, #1a1630 0%, #0f1329 100%);
-      border-radius: 16px;
-      box-shadow: 0 12px 30px rgba(99, 102, 241, 0.2);
-      border: 2px solid rgba(99, 102, 241, 0.1);
-      animation: slideUp 0.8s ease 0.3s both;
-    }
-
-    .donate-section h2 {
-      color: #a5b4fc;
-      margin-top: 24px;
-      margin-bottom: 16px;
-      animation: slideInLeft 0.6s ease;
-      border-left: 4px solid #ec4899;
-      padding-left: 16px;
-    }
-
-    .donate-section:first-child h2 {
-      margin-top: 0;
-    }
-
-    .donate-section ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .donate-section li {
-      padding: 12px 0;
-      padding-left: 32px;
-      position: relative;
-      color: #d1d5db;
-      line-height: 1.6;
-      animation: fadeInListItem 0.5s ease backwards;
-      transition: transform 0.3s ease, color 0.3s ease;
-    }
-
-    .donate-section li:nth-child(1) { animation-delay: 0.1s; }
-    .donate-section li:nth-child(2) { animation-delay: 0.2s; }
-    .donate-section li:nth-child(3) { animation-delay: 0.3s; }
-    .donate-section li:nth-child(4) { animation-delay: 0.4s; }
-
-    .donate-section li:hover {
-      transform: translateX(8px);
-      color: #a5b4fc;
-    }
-
-    .donate-section li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      top: 10px;
-      color: #ec4899;
-      font-weight: bold;
-      font-size: 18px;
-    }
-
-    .donate-methods {
-      background: linear-gradient(90deg, rgba(99, 102, 241, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
-      padding: 24px;
-      border-radius: 12px;
-      margin-top: 24px;
-      border: 1px solid rgba(99, 102, 241, 0.2);
-    }
-
-    .donate-methods li {
-      padding: 12px 0;
-      font-weight: 500;
-      border-bottom: 1px solid rgba(99, 102, 241, 0.1);
-      color: #d1d5db;
-    }
-
-    .donate-methods li:last-child {
-      border-bottom: none;
-    }
-
-    .donate-methods strong {
-      color: #a5b4fc;
-    }
-
-    .donate-cta {
-      margin-top: 32px;
-      padding-top: 32px;
-      border-top: 2px solid rgba(99, 102, 241, 0.1);
-      text-align: center;
-      animation: fadeInUp 0.8s ease 0.5s both;
-    }
-
-    .donate-cta a {
-      font-size: 18px;
-      font-weight: 600;
-      color: #a5b4fc;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      display: inline-block;
-    }
-
-    .donate-cta a:hover {
-      transform: translateY(-2px);
-    }
-
-    @keyframes fadeInListItem {
-      from {
-        opacity: 0;
-        transform: translateX(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-  </style>
 </head>
 <body>
-  <nav class="navbar">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <nav class="navbar" aria-label="Main navigation">
     <a href="index.html" class="logo">NxtGen Capital</a>
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul class="nav-links">
-      <li><a href="index.html#main-projects">Projects</a></li>
-      <li><a href="index.html#main-speakers">Speakers</a></li>
-      <li><a href="index.html#main-ambassador">Ambassador</a></li>
-      <li><a href="index.html#main-student-signup">Student Sign-Up</a></li>
-      <li><a href="index.html#main-founders">Founder</a></li>
-      <li><a href="index.html#main-about">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="speakers.html">Speakers</a></li>
+      <li><a href="ambassador.html">Ambassador</a></li>
+      <li><a href="student-signup.html">Student Sign-Up</a></li>
+      <li><a href="founders.html">Founder</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="donate.html">Donate</a></li>
     </ul>
   </nav>
 
-  <section class="donate-hero">
+  <section class="donate-hero" id="main-content">
     <h1>Support NxtGen Capital</h1>
     <p>Your donation helps us provide free, project-based economics and business education to students in the Bay Area and beyond.</p>
-    <p style="color: #d1d5db; margin-top: 12px;">Every contribution, no matter the size, makes a difference in empowering the next generation of economic thinkers.</p>
+    <p>Every contribution, no matter the size, makes a difference in empowering the next generation of economic thinkers.</p>
   </section>
 
   <div class="donate-container">
@@ -186,8 +69,18 @@
   </div>
 
   <footer class="footer">
-    <p>© 2025 NxtGen Capital — Built for students, by students.</p>
-    <p>Free programs • Real projects • Industry mentorship</p>
+    <p>&copy; 2026 NxtGen Capital — Built for students, by students.</p>
+    <p>Free programs &bull; Real projects &bull; Industry mentorship</p>
   </footer>
+
+  <script>
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      navToggle.classList.toggle('active');
+      navToggle.setAttribute('aria-expanded', navLinks.classList.contains('active'));
+    });
+  </script>
 </body>
 </html>

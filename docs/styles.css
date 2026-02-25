@@ -167,6 +167,20 @@ select:focus-visible {
   animation: fadeInUp 0.8s ease 0.4s both;
 }
 
+.launch-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border: 2px solid #f59e0b;
+  border-radius: 50px;
+  color: #fbbf24;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
 @keyframes slideInDown {
   from {
     opacity: 0;

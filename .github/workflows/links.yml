@@ -1,0 +1,81 @@
+name: Check Links
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for broken internal links
+        run: |
+          echo "Checking internal links across HTML files..."
+          errors=0
+
+          for file in docs/*.html; do
+            # Extract href values pointing to local HTML files
+            hrefs=$(grep -oP 'href="([^"#]*\.html)' "$file" | sed 's/href="//' || true)
+            for href in $hrefs; do
+              # Skip external URLs
+              if echo "$href" | grep -qE '^https?://'; then
+                continue
+              fi
+              target="docs/$href"
+              if [ ! -f "$target" ]; then
+                echo "BROKEN: $file -> $href (file not found: $target)"
+                errors=$((errors + 1))
+              fi
+            done
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo ""
+            echo "Found $errors broken link(s)!"
+            exit 1
+          else
+            echo "All internal links are valid."
+          fi
+
+      - name: Validate HTML structure
+        run: |
+          echo "Checking HTML files for common issues..."
+          errors=0
+
+          for file in docs/*.html; do
+            # Check for missing lang attribute
+            if ! grep -q 'html lang=' "$file"; then
+              echo "MISSING lang attribute: $file"
+              errors=$((errors + 1))
+            fi
+
+            # Check for missing viewport meta
+            if ! grep -q 'viewport' "$file"; then
+              echo "MISSING viewport meta: $file"
+              errors=$((errors + 1))
+            fi
+
+            # Check for missing title
+            if ! grep -q '<title>' "$file"; then
+              echo "MISSING title: $file"
+              errors=$((errors + 1))
+            fi
+
+            # Check for missing meta description
+            if ! grep -q 'meta name="description"' "$file"; then
+              echo "MISSING meta description: $file"
+              errors=$((errors + 1))
+            fi
+          done
+
+          if [ "$errors" -gt 0 ]; then
+            echo ""
+            echo "Found $errors issue(s)!"
+            exit 1
+          else
+            echo "All HTML files pass basic validation."
+          fi
